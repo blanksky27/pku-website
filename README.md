@@ -1,6 +1,6 @@
 # Understanding PKU — Website
 
-A simple, responsive educational website about phenylketonuria (PKU), based on the supplied school presentation.
+A simple, responsive educational website about phenylketonuria (PKU).
 
 ## Files
 

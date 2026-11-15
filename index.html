@@ -157,6 +157,37 @@
     }
     .callout p:last-child { margin-bottom: 0; }
 
+    /* Science */
+    .punnett { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0 10px; }
+    .punnett div { padding: 12px; border-radius: 6px; background: var(--green-light); font-size: .9rem; line-height: 1.4; text-align: center; }
+    .punnett .pku { background: #fbefeb; color: #8a3f2b; font-weight: 650; }
+    .punnett b { display: block; }
+    .toggle { display: inline-flex; margin-bottom: 18px; border: 1px solid var(--green); border-radius: 8px; overflow: hidden; }
+    .toggle button { padding: 10px 20px; border: 0; color: var(--green); background: white; font: inherit; font-weight: 650; cursor: pointer; }
+    .toggle button[aria-pressed="true"] { color: white; background: var(--green); }
+    .pathway { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 26px; margin-bottom: 30px; padding: 0; list-style: none; }
+    .node { position: relative; padding: 14px; background: var(--green-light); border: 1px solid #d0e0d9; border-radius: 8px; font-size: .9rem; line-height: 1.45; }
+    .node + .node::before { content: "\2192"; position: absolute; left: -22px; top: 50%; transform: translateY(-50%); color: var(--green); font-size: 1.3rem; }
+    .node strong { display: block; margin-bottom: 4px; font-family: var(--serif); font-size: 1rem; }
+    .node .p, .pathway[data-state="pku"] .node .h { display: none; }
+    .pathway[data-state="pku"] .node .p { display: block; }
+    .pathway[data-state="pku"] .node.bad { background: #fbefeb; border-color: #efd0c5; }
+    .stops { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+    .stop { padding: 22px; background: white; border: 1px solid var(--line); border-radius: 8px; }
+    .stop h3 { margin-bottom: 12px; }
+    .stop p { margin: 0 0 12px; padding-left: 12px; border-left: 3px solid var(--green); color: var(--muted); font-size: .95rem; line-height: 1.6; }
+    .stop p.bad { border-color: #c77b62; }
+    .stop p:last-child { margin-bottom: 0; }
+    .stop p b { display: block; color: var(--ink); }
+    .terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 28px; margin: 30px 0 0; }
+    .terms dt { margin-top: 12px; color: var(--green); font-weight: 700; }
+    .terms dd { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.6; }
+    @media (max-width: 760px) {
+      .pathway, .stops, .terms { grid-template-columns: 1fr; }
+      .pathway { gap: 28px; }
+      .node + .node::before { content: "\2193"; left: 50%; top: -26px; transform: translateX(-50%); }
+    }
+
     /* Steps */
     .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
     .step {
@@ -256,8 +287,10 @@
       <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#about">About PKU</a>
-        <a href="#next-steps">What happens next</a>
-        <a href="#care">Caring for your baby</a>
+        <a href="#cause">Cause</a>
+        <a href="#science">The science</a>
+        <a href="#next-steps">Next steps</a>
+        <a href="#care">Care</a>
         <a href="#questions">Questions</a>
         <a href="#sources">Sources</a>
       </nav>
@@ -300,7 +333,7 @@
           </article>
           <article class="card">
             <h3>Why it happens</h3>
-            <p>PKU is passed down in families. A baby has it when both parents carry a changed copy of the same gene, usually without knowing. It is no one’s fault.</p>
+            <p>PKU is passed down in families. It is no one’s fault. The next two sections explain the cause and what goes wrong inside the body.</p>
           </article>
         </div>
         <div class="callout">
@@ -309,7 +342,80 @@
       </div>
     </section>
 
-    <section class="alt" id="next-steps">
+        <section class="alt" id="cause">
+      <div class="container">
+        <h2>What causes PKU</h2>
+        <p class="section-intro">PKU is caused by changes (variants) in a gene called <strong>PAH</strong>. This gene holds the instructions for making an enzyme, a protein that speeds up one specific chemical reaction. This enzyme is called phenylalanine hydroxylase, or <strong>PAH</strong> too.</p>
+        <div class="columns">
+          <article class="card">
+            <h3>Two copies, one from each parent</h3>
+            <p>Everyone inherits two copies of the PAH gene. PKU is <em>autosomal recessive</em>: a baby is affected only when both copies carry a harmful change. A parent with one changed copy is a “carrier”. Their working copy makes enough enzyme, so carriers are usually healthy and often unaware.</p>
+            <p>A change can mean too little enzyme is made, or that the enzyme works poorly. How much activity is left decides how severe PKU is.</p>
+          </article>
+          <article class="card">
+            <h3>When both parents are carriers</h3>
+            <div class="punnett" role="img" aria-label="Each pregnancy: 1 in 4 chance of no changed copy, 2 in 4 of a carrier, 1 in 4 of PKU">
+              <div><b>1 in 4</b>Two working copies</div>
+              <div><b>1 in 4</b>Carrier</div>
+              <div><b>1 in 4</b>Carrier</div>
+              <div class="pku"><b>1 in 4</b>PKU: two changed copies</div>
+            </div>
+            <p>These are the odds in each pregnancy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="science">
+      <div class="container">
+        <h2>How PKU affects the body</h2>
+        <p class="section-intro">To understand PKU, follow phenylalanine (Phe) from food to the brain. Switch between a healthy baby and a baby with PKU to compare.</p>
+        <div class="toggle" role="group" aria-label="Compare">
+          <button type="button" id="showHealthy" aria-pressed="true">Healthy baby</button>
+          <button type="button" id="showPku" aria-pressed="false">Baby with PKU</button>
+        </div>
+        <ol class="pathway" id="pathway" data-state="healthy">
+          <li class="node"><strong>Food protein</strong>Digested into amino acids, including Phe.</li>
+          <li class="node bad"><strong>Phe in the blood</strong><span class="h">Stays within a safe range.</span><span class="p">Builds up to high levels.</span></li>
+          <li class="node bad"><strong>Liver cells</strong><span class="h">PAH enzyme, with its helper BH₄, converts Phe to tyrosine.</span><span class="p">PAH missing or weak, so Phe is not converted. Side products also form.</span></li>
+          <li class="node bad"><strong>Tyrosine</strong><span class="h">Plenty available.</span><span class="p">Supply falls.</span></li>
+          <li class="node bad"><strong>Brain cells</strong><span class="h">Make dopamine and norepinephrine normally.</span><span class="p">Fewer brain messengers; development disrupted.</span></li>
+        </ol>
+
+        <ol class="stops">
+          <li class="stop">
+            <h3>Liver cells</h3>
+            <p><b>In a healthy baby</b>Liver cells (hepatocytes) make the PAH enzyme. Phe is an essential amino acid used to build proteins, and PAH removes the surplus by turning it into tyrosine. This keeps Phe in a narrow, safe range.</p>
+            <p class="bad"><b>In PKU</b>Without working PAH, surplus Phe stays in the blood. Some is pushed down a minor side route, making products such as phenylpyruvate (“phenylketones”, which give PKU its name) that also build up.</p>
+          </li>
+          <li class="stop">
+            <h3>Blood-brain barrier</h3>
+            <p><b>In a healthy baby</b>Cells lining the brain’s blood vessels use a carrier called LAT1 to shuttle large amino acids, including Phe, tyrosine and tryptophan, into the brain in balance.</p>
+            <p class="bad"><b>In PKU</b>Very high Phe floods the carrier and crowds out the others. More Phe enters the brain, and less tyrosine and tryptophan.</p>
+          </li>
+          <li class="stop">
+            <h3>Brain cells</h3>
+            <p><b>In a healthy baby</b>Neurons use tyrosine to make dopamine and norepinephrine, and tryptophan to make serotonin. These chemical messengers pass signals between cells. Oligodendrocytes wrap nerve fibres in myelin so signals travel fast.</p>
+            <p class="bad"><b>In PKU</b>Less raw material, plus high Phe interfering with the enzymes that make messengers, lowers their levels. Protein building and myelin are also disturbed. A baby’s brain is wiring itself rapidly, so this can cause developmental delay, intellectual disability and seizures.</p>
+          </li>
+        </ol>
+
+        <div class="callout">
+          <p><strong>Why babies look fine at first.</strong> Before birth, the mother’s liver clears the baby’s extra Phe. After birth, Phe climbs as milk feeds begin. That is why the test is ideally done at 24–72 hours, and why treatment that lowers Phe protects the brain.</p>
+        </div>
+
+        <dl class="terms">
+          <dt>Phenylalanine (Phe)</dt><dd>An amino acid in protein foods. The body needs some, but not too much.</dd>
+          <dt>Tyrosine</dt><dd>An amino acid made from Phe. Used for proteins, pigment and brain messengers.</dd>
+          <dt>PAH enzyme</dt><dd>The liver enzyme that converts Phe to tyrosine. It needs the helper molecule BH₄ (a cofactor).</dd>
+          <dt>Neurotransmitter</dt><dd>A chemical messenger that carries signals between nerve cells.</dd>
+          <dt>Myelin</dt><dd>The fatty insulation around nerve fibres that speeds up signals.</dd>
+          <dt>Blood-brain barrier</dt><dd>A protective lining that controls what passes from blood into the brain.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="next-steps">
       <div class="container">
         <h2>What happens next</h2>
         <p class="section-intro">There are three stages. Most families only need to think about the first one.</p>
@@ -339,7 +445,7 @@
       </div>
     </section>
 
-    <section id="care">
+    <section class="alt" id="care">
       <div class="container">
         <h2>Caring for a baby with PKU</h2>
         <p class="section-intro">If your baby is diagnosed, you won’t be doing this alone. Care is built around three things.</p>
@@ -363,7 +469,7 @@
       </div>
     </section>
 
-    <section class="alt" id="questions">
+    <section id="questions">
       <div class="container">
         <h2>Questions to ask your care team</h2>
         <p class="section-intro">Tick them off as you go. You can bring this list to your next appointment.</p>
@@ -379,7 +485,7 @@
       </div>
     </section>
 
-    <section id="faq">
+    <section class="alt" id="faq">
       <div class="container">
         <h2>Common questions</h2>
         <details>
@@ -422,7 +528,7 @@
           <li>Schuck, P. F., Malgarin, F., Cararo, J. H., Cardoso, F., Streck, E. L., &amp; Ferreira, G. C. (2015). Phenylketonuria pathophysiology: On the role of metabolic alterations. <em>Aging and Disease, 6</em>(5), 390–399.</li>
           <li>SingHealth. (n.d.). <em>Metabolic screening test for your newborn baby.</em></li>
         </ol>
-        <p class="disclaimer">This website is an educational resource based on a student presentation, with the science simplified for parents. It does not replace professional medical advice, diagnosis or treatment. Please check current screening guidance with your healthcare provider.</p>
+        <p class="disclaimer">This website is an educational resource based on a student presentation, with the science explained in plain language for parents. It does not replace professional medical advice, diagnosis or treatment. Please check current screening guidance with your healthcare provider.</p>
       </div>
     </section>
   </main>
@@ -435,6 +541,17 @@
   </footer>
 
   <script>
+    const pathway = document.getElementById("pathway");
+    const btnH = document.getElementById("showHealthy");
+    const btnP = document.getElementById("showPku");
+    function setState(state) {
+      pathway.dataset.state = state;
+      btnH.setAttribute("aria-pressed", String(state === "healthy"));
+      btnP.setAttribute("aria-pressed", String(state === "pku"));
+    }
+    btnH.addEventListener("click", () => setState("healthy"));
+    btnP.addEventListener("click", () => setState("pku"));
+
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
 

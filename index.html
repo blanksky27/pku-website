@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A plain-language guide for parents of newborns about PKU (phenylketonuria): the newborn blood test, what happens next, and how it is treated.">
+  <title>PKU: A Guide for Parents of Newborns</title>
+  <style>
+    :root {
+      --green: #28645e;
+      --green-dark: #1d514c;
+      --green-light: #eaf2ef;
+      --ink: #25333b;
+      --muted: #55646b;
+      --paper: #fbfcfa;
+      --line: #dfe7e3;
+      --warm: #f7f2e9;
+      --gold: #c6a45e;
+      --max-width: 980px;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 17px/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--green); }
+    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .container { width: min(var(--max-width), calc(100% - 40px)); margin: 0 auto; }
+    p { margin-top: 0; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 252, 250, .97);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-name {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 13px;
+      color: var(--ink);
+      background: white;
+      font: inherit;
+      font-size: .95rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 76px 0 64px;
+      background: var(--green-light);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-kicker { margin: 0 0 12px; color: var(--green); font-weight: 650; }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+    h1 {
+      max-width: 720px;
+      margin: 0 0 20px;
+      font-size: clamp(2.3rem, 6vw, 3.8rem);
+      letter-spacing: -.02em;
+    }
+    .hero-intro { max-width: 640px; margin: 0; color: #43565b; font-size: 1.15rem; }
+    .button {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 12px 22px;
+      border-radius: 6px;
+      color: white;
+      background: var(--green);
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .button:hover { background: var(--green-dark); }
+
+    .reassure {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .reassure div {
+      padding: 18px 20px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid #d8e5df;
+      border-radius: 8px;
+    }
+    .reassure strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+    }
+    .reassure span { color: var(--muted); font-size: .95rem; line-height: 1.55; display: block; }
+
+    /* Sections */
+    section { padding: 68px 0; border-bottom: 1px solid var(--line); }
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -.015em;
+    }
+    h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    .section-intro { max-width: 680px; margin: 0 0 30px; color: var(--muted); font-size: 1.05rem; }
+    .alt { background: #f5f7f5; }
+
+    .columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .card p { color: var(--muted); }
+    .card p:last-child { margin-bottom: 0; }
+
+    .callout {
+      margin-top: 24px;
+      padding: 17px 20px;
+      background: var(--warm);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      color: #594f3c;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; }
+    .step {
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: white;
+      background: var(--green);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .step p { margin: 0; color: var(--muted); font-size: 1rem; }
+    .time {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 10px;
+      background: var(--green-light);
+      border-radius: 4px;
+      color: var(--green);
+      font-size: .85rem;
+      font-weight: 650;
+    }
+
+    /* Care */
+    .care { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .care div { padding-top: 14px; border-top: 3px solid var(--green); }
+    .care p { margin: 0; color: var(--muted); }
+
+    /* Checklist */
+    .checklist { max-width: 720px; padding: 0; margin: 0; list-style: none; }
+    .checklist li { border-bottom: 1px solid var(--line); }
+    .checklist li:last-child { border-bottom: 0; }
+    .checklist label { display: flex; gap: 14px; align-items: flex-start; padding: 13px 0; cursor: pointer; }
+    .checklist input { flex: none; width: 22px; height: 22px; margin-top: 4px; accent-color: var(--green); }
+    .checklist input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: #9aa8a4; }
+
+    /* FAQ */
+    details {
+      max-width: 780px;
+      margin: 10px 0;
+      padding: 16px 20px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    summary { cursor: pointer; font-weight: 650; }
+    details[open] summary { color: var(--green); }
+    details p { margin: 12px 0 0; color: var(--muted); }
+
+    /* Sources */
+    .references { padding-left: 22px; color: var(--muted); font-size: .92rem; line-height: 1.6; }
+    .references li { padding: 7px 0; overflow-wrap: anywhere; }
+    .disclaimer { max-width: 780px; margin: 22px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+
+    footer { padding: 26px 0; color: var(--muted); font-size: .9rem; }
+    footer .container { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+
+    @media (max-width: 760px) {
+      .menu-button { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        padding: 16px 20px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: grid; gap: 14px; }
+      .hero { padding: 52px 0 48px; }
+      section { padding: 52px 0; }
+      .columns, .steps, .care, .reassure { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 430px) {
+      .container { width: min(var(--max-width), calc(100% - 32px)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="site-name" href="#top">Understanding PKU</a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About PKU</a>
+        <a href="#next-steps">What happens next</a>
+        <a href="#care">Caring for your baby</a>
+        <a href="#questions">Questions</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="container">
+        <p class="hero-kicker">A guide for parents of newborns</p>
+        <h1>PKU: what new parents need to know</h1>
+        <p class="hero-intro">PKU is a rare condition that babies are born with. A baby with PKU often looks healthy at birth, but without early treatment it can harm the developing brain. A simple newborn blood test finds it early, and with the right care, serious harm can be prevented.</p>
+        <a class="button" href="#next-steps">See what happens next</a>
+
+        <div class="reassure">
+          <div>
+            <strong>A simple test</strong>
+            <span>A few drops of blood from your baby’s heel, ideally taken 24–72 hours after birth.</span>
+          </div>
+          <div>
+            <strong>Treatable</strong>
+            <span>Managed with a special diet, medical formula and regular blood tests.</span>
+          </div>
+          <div>
+            <strong>Nobody’s fault</strong>
+            <span>PKU is inherited. Nothing you did caused it.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <h2>PKU in plain words</h2>
+        <p class="section-intro">Phenylketonuria (PKU) means the body cannot break down a protein building block called phenylalanine (“Phe” for short). It is found in protein foods, including breast milk and formula. In babies with PKU, Phe slowly builds up in the blood.</p>
+        <div class="columns">
+          <article class="card">
+            <h3>Why it matters</h3>
+            <p>Too much Phe can affect how a baby’s brain develops. Without treatment, it can lead to developmental delay, intellectual disability and seizures, and some damage cannot be reversed. That is why finding PKU early makes such a difference.</p>
+          </article>
+          <article class="card">
+            <h3>Why it happens</h3>
+            <p>PKU is passed down in families. A baby has it when both parents carry a changed copy of the same gene, usually without knowing. It is no one’s fault.</p>
+          </article>
+        </div>
+        <div class="callout">
+          <p><strong>Looking healthy doesn’t rule it out.</strong> A baby with PKU may look completely well at birth. That is why newborns are tested even when everything seems fine.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="next-steps">
+      <div class="container">
+        <h2>What happens next</h2>
+        <p class="section-intro">There are three stages. Most families only need to think about the first one.</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>The newborn test</h3>
+            <p>A nurse pricks your baby’s heel and collects a few drops of blood on a special card. It is quick, and it screens for PKU and other rare conditions.</p>
+            <span class="time">Ideally 24–72 hours after birth</span>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Check the result</h3>
+            <p>If the result is out of range, your baby needs more blood tests to confirm. Book these promptly and see the specialist team.</p>
+            <span class="time">Act quickly, but stay calm</span>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Start care</h3>
+            <p>If PKU is confirmed, a specialist team builds a care plan for your baby and teaches you how to follow it.</p>
+            <span class="time">Ongoing support</span>
+          </li>
+        </ol>
+        <div class="callout">
+          <p><strong>An out-of-range result is not a diagnosis.</strong> It only means more testing is needed to be sure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="care">
+      <div class="container">
+        <h2>Caring for a baby with PKU</h2>
+        <p class="section-intro">If your baby is diagnosed, you won’t be doing this alone. Care is built around three things.</p>
+        <div class="care">
+          <div>
+            <h3>A specialist team</h3>
+            <p>Doctors and dietitians who set up your baby’s plan and answer your questions.</p>
+          </div>
+          <div>
+            <h3>A special diet</h3>
+            <p>Your baby still needs some Phe to grow, so it is limited to a target set for your baby, not removed completely. A medical formula provides the other nutrients.</p>
+          </div>
+          <div>
+            <h3>Regular blood tests</h3>
+            <p>These check your baby’s Phe level so the team can adjust the plan as your baby grows.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <p><strong>Please don’t change your baby’s feeding on your own.</strong> Always follow the plan from the specialist team, and ask them if you’re unsure about anything, including breastfeeding.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="questions">
+      <div class="container">
+        <h2>Questions to ask your care team</h2>
+        <p class="section-intro">Tick them off as you go. You can bring this list to your next appointment.</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"><span>When will my baby’s heel-prick test be done?</span></label></li>
+          <li><label><input type="checkbox"><span>How and when will we get the result?</span></label></li>
+          <li><label><input type="checkbox"><span>If the result is out of range, what are the next tests, and when should we go?</span></label></li>
+          <li><label><input type="checkbox"><span>Who is on our specialist team, and how do we contact them?</span></label></li>
+          <li><label><input type="checkbox"><span>Is there anything I should do about feeding while we wait?</span></label></li>
+          <li><label><input type="checkbox"><span>Should we speak to a genetic counsellor about future pregnancies?</span></label></li>
+          <li><label><input type="checkbox"><span>Is there a support group for families like ours?</span></label></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>Common questions</h2>
+        <details>
+          <summary>Did I do something to cause this?</summary>
+          <p>No. PKU is inherited, and nothing you did or didn’t do caused it.</p>
+        </details>
+        <details>
+          <summary>Will my baby look unwell at birth?</summary>
+          <p>Not necessarily. A baby may look completely healthy, which is why screening matters. Symptoms may not be obvious before high Phe levels start to affect development.</p>
+        </details>
+        <details>
+          <summary>Does an out-of-range result mean my baby has PKU?</summary>
+          <p>No. It means further tests are needed. Confirmatory blood tests and a specialist review are how PKU is diagnosed, so go to those appointments promptly.</p>
+        </details>
+        <details>
+          <summary>Will my baby have to avoid protein completely?</summary>
+          <p>No. The body needs some Phe. Treatment keeps it within a target set for your baby by the specialist team.</p>
+        </details>
+        <details>
+          <summary>Is treatment for life?</summary>
+          <p>Usually, yes. Care continues with controlled Phe intake, medical nutrition and regular blood tests, and your team will guide you at each stage.</p>
+        </details>
+        <details>
+          <summary>Could it happen again in a future pregnancy?</summary>
+          <p>If both parents carry the changed gene, each pregnancy has a 1 in 4 chance of a baby with PKU. A genetic counsellor can explain what this means for your family.</p>
+        </details>
+        <details>
+          <summary>How common is PKU?</summary>
+          <p>It is rare. Worldwide, it affects roughly 1 in 24,000 babies on average, though this varies from country to country.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="container">
+        <h2>Sources</h2>
+        <ol class="references">
+          <li>Bailey, N. A., &amp; Mackay, L. (2024). Phenylketonuria—Past, present, and future directions. <em>OBM Genetics, 8</em>(3), Article 256.</li>
+          <li>Nulmans, I., Lequeue, S., Desmet, L., Del’Haye, G. G., Salvi, N. S., Rombaut, M., Neuckermans, J., &amp; De Kock, J. (2025). Phenylketonuria: A guide through the complex maze of its neurological pathophysiology providing a new perspective on treatment strategies. <em>Biomedicine &amp; Pharmacotherapy, 191</em>, Article 118522.</li>
+          <li>Schuck, P. F., Malgarin, F., Cararo, J. H., Cardoso, F., Streck, E. L., &amp; Ferreira, G. C. (2015). Phenylketonuria pathophysiology: On the role of metabolic alterations. <em>Aging and Disease, 6</em>(5), 390–399.</li>
+          <li>SingHealth. (n.d.). <em>Metabolic screening test for your newborn baby.</em></li>
+        </ol>
+        <p class="disclaimer">This website is an educational resource based on a student presentation, with the science simplified for parents. It does not replace professional medical advice, diagnosis or treatment. Please check current screening guidance with your healthcare provider.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>Understanding PKU: an educational website</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
